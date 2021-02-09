@@ -7,17 +7,35 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.sass']
 })
 export class DashboardComponent implements OnInit {
-  pokemon: any;
-  constructor(private pokemonService: PokemonService) { }
+  data: any;
+  switcher: any;
+
+  constructor(private pokemonService: PokemonService) {
+    this.switcher = 'abilities';
+   }
 
   ngOnInit(): void {
-    this.init()
+    this.init();
   }
 
   init(){
     this.pokemonService.getPokemonByName('pikachu')
-    .then(res => this.pokemon= res)
-    .catch(err => console.error(err))
+      .then((response)=>{
+        console.log(response)
+        this.data = response;
+      })
+      .catch(( error:any )=>{
+        console.log(error);
+      })
   }
 
+  public toggle(e) {
+    let elementID: string = e?.path[0]?.id;
+    console.log(e?.path[0]?.id);
+    if (elementID == 'abilities-tab') {
+      this.switcher = 'abilities';
+    } else {
+      this.switcher = 'moves'
+    }
+  }
 }
