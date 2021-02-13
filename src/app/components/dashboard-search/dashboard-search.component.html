@@ -1,0 +1,32 @@
+<h5>Busqueda de : {{searchResult}}</h5>
+<div class="card-columns" id="cardId">
+    <div class="card" style="width: 18rem;">
+        <div class="container ">
+            <img class="card-img-top" src="{{poke.sprites.front_default}}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Name: {{poke.name}}</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Height: {{poke.height}}</li>
+                <li class="list-group-item">Weight: {{poke.weight}}</li>
+            </ul>
+            <div >
+                <div >
+                    <button  (click)="mostrar = !mostrar" type="button"
+                        class="btn btn-secondary btn-block">Abilitys</button>
+                    <div id="most" *ngIf="mostrar">
+                        <a class="list-group-item" *ngFor="let item of abilitie">{{item.ability.name }}</a>
+                    </div>
+                </div>
+                <div >
+                    <button  (click)="mostrar2 = !mostrar2" type="button"
+                        class="btn btn-secondary btn-block">Moves</button>
+                    <div id="most" *ngIf="mostrar2">
+                        <a class="list-group-item" *ngFor="let item of move">{{item.move.name }}</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

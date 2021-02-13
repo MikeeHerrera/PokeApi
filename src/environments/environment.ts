@@ -4,21 +4,26 @@
 
 export const environment = {
   production: false,
-  endpoints: {
-    api: 'https://pokeapi.co/api/v2/',
+  endpoint: {
+    api: "https://pokeapi.co/api/v2/",
     pokemon: {
-      id: 'pokemon/_id_',
-      name: 'pokemon/_name_'
+      id: "pokemon/_id_",
+      name: "pokemon/_name_"
     },
     type: {
-      id: 'type/_id_'
+      id: "type/_id_"
     },
     ability: {
-      id: 'ability/_id_'
+      id: "ability/_id_"
+    },
+    pokemons: {
+      pokemonss: "pokemon"
     }
-  }
+
+
+  },
 };
-//Se recomienda poner todas las vairbales que se repetiran en el proyecto.
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

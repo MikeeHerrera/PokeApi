@@ -1,1 +1,27 @@
-<p>header works!</p>
+<mat-toolbar>
+
+  <button mat-icon-button class="example-icon esp" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span class="esp">My App</span>
+
+  <!-- buscador -->
+  <mat-form-field class="example-form-field">
+    <!-- <mat-label>Clearable input</mat-label> -->
+    <input class="esp" matInput type="text" ([ngModel])="value" 
+      (keyup.enter)="buscarPokemon(buscarTxt.value)" #buscarTxt>
+
+    <!-- <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''"> -->
+    <!-- <mat-icon>close</mat-icon> -->
+
+  </mat-form-field>
+
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon>share</mat-icon>
+  </button>
+</mat-toolbar>
+<br>

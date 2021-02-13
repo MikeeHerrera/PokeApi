@@ -1,0 +1,30 @@
+<div class="card " style="width: 18rem;">
+  <div class="container">
+    
+    <div class="card-body">
+      <h5 class="card-title">Name: {{pokemon.name}}</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Height: {{pokemon.height}}</li>
+      <li class="list-group-item">Weight: {{pokemon.weight}}</li>
+    </ul>
+    <div class="row">
+      <div class="col">
+        <button style="width: 100%;" (click)="mostrar = !mostrar" type="button"
+          class="btn btn-secondary btn-block">Abilitys</button>
+        <div id="most" *ngIf="mostrar">
+          <a class="list-group-item" *ngFor="let item of habilities">{{item.ability.name }}</a>
+        </div>
+      </div>
+
+      <div class="col">
+        <button style="width: 100%;" (click)="mostrar2 = !mostrar2" type="button"
+          class="btn btn-secondary btn-block">Moves</button>
+     
+        <div id="most" *ngIf="mostrar2">
+          <a class="list-group-item" *ngFor="let item of moves">{{item.move.name }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
