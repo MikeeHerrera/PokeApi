@@ -8,7 +8,8 @@ export const environment = {
     api: "https://pokeapi.co/api/v2/",
     pokemon: {
       id: "pokemon/_id_",
-      name: "pokemon/_name_"
+      name: "pokemon/_name_",
+      pagination: 'pokemon?limit=_limit_&offset=_offset_'
     },
     type: {
       id: "type/_id_"

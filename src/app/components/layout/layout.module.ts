@@ -7,6 +7,8 @@ import { LayoutComponent } from './layout.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { dashboardService } from "./services/dashboard.service";
 import { DashboardSearchComponent } from "../dashboard-search/dashboard-search.component";
+import { MatGridListModule } from '@angular/material/grid-list';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 
@@ -19,7 +21,10 @@ import { DashboardSearchComponent } from "../dashboard-search/dashboard-search.c
   imports: [
     CommonModule,
     LayoutRoutingModule,
-    SharedModule
+    SharedModule,
+    MatGridListModule,
+    MatDialogModule
+
   ],
   providers: [
     dashboardService

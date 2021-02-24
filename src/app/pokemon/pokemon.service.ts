@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { promise } from 'protractor';
 import { environment } from 'src/environments/environment';
 import { HttpClientService } from '../service/http-client.service';
 
@@ -29,4 +30,9 @@ export class PokemonService extends HttpClientService {
     return this.get(url.replace("_id_", id));
   }
 
+
+  public getPokemonByPage(limit:any, offset:any):Promise<any>{
+    const url: string = this.endpoint.pagination;
+    return this.get(url.replace('_limit_', limit).replace('_offset_', offset));
+  }
 }

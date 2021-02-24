@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PokemonService } from 'src/app/pokemon/pokemon.service';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,16 +16,26 @@ export class DashboardComponent implements OnInit {
   mostrar = false;
   mostrar2 = false;
   pokemons: any;
-  constructor(private activatedRoute: ActivatedRoute,private pokemonService: PokemonService) {
+  data =[];
+  // status:any;
+  constructor(private activatedRoute: ActivatedRoute,private pokemonService: PokemonService,
+    public dialog: MatDialog) {
 
   }
 
-  ngOnInit(): void {
-    this.init();
-  }
+  ngOnInit() {
+ }
+ 
+muestra(event){
+  this.data =[];
+  this.data.push(event.data)
+  console.log(this.data)
+  // this.status == true; 
 
-  init() {
-    this.pokemonService.getPokemonByName("pikachu").then((response) => {
+}
+  init(event) {
+      this.pokemonService.getPokemonByName(event).then((response) => {
+        console.log(response)
       this.pokemon = response;
       this.habilities = response.abilities;
       this.moves = response.moves;

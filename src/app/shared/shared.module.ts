@@ -9,13 +9,16 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { PaginatorComponent } from './components/paginator/paginator.component';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 
 @NgModule({
   declarations: [
     HeaderComponent, 
-    FooterComponent
+    FooterComponent, PaginatorComponent
   ],
   imports: [
     CommonModule,
@@ -24,11 +27,14 @@ import {MatButtonModule} from '@angular/material/button';
     MatIconModule,
     MatInputModule,
     MatFormFieldModule,
-    MatButtonModule
+    MatButtonModule,
+    MatPaginatorModule,
+    MatGridListModule
   ],
   exports: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    PaginatorComponent
   ]
 })
 export class SharedModule { }
